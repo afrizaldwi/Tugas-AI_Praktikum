@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-# from pyngrok import ngrok
+from pyngrok import ngrok
 
 
 @st.cache_data
@@ -74,5 +74,5 @@ def main():
 if __name__ == "__main__":
     main()
 
-# public_url = ngrok.connect(port=8501)
-# print(f"Streamlit app bisa diakses di:\n{public_url}")
+public_url = ngrok.connect(port=8501)
+print(f"Streamlit app bisa diakses di:\n{public_url}")
