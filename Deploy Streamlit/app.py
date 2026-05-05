@@ -2,14 +2,14 @@ import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-import os
+from pathlib import Path
 
 
 @st.cache_data
 def load_data():
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(current_dir, "Fish.csv")
-    df = pd.read_csv(file_path)
+    current_dir = Path(__file__).parent
+    csv_path = current_dir / "Fish.csv"
+    df = pd.read_csv(csv_path)
     return df
 
 
